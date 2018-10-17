@@ -24,6 +24,7 @@ router.get('/channels/:id/messages/:message_id', async (req, res) => {
 })
 // Create Message
 router.post('/channels/:id/messages', upload.single('file'), async (req, res) => {
+  console.log('Running create message')
   let body = req.body
   try {
     if (req.body.payload_json) {
