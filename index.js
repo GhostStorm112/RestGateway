@@ -25,5 +25,10 @@ app.use('/api/v7', require('./routes/invites'))
 app.use('/api/v7', require('./routes/users'))
 app.use('/api/v7', require('./routes/voice'))
 app.use('/api/v7', require('./routes/webhook'))
+app.use(function(req,res, next){
+  console.log('Request received')
+})
 app.listen(process.env.REST_PORT, process.env.REST_HOST_LOCAL)
+
+
 console.log(`App started on ${process.env.REST_HOST_LOCAL}:${process.env.REST_PORT}`)
